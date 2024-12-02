@@ -2,13 +2,9 @@
 
 Welcome to the Advent of Code[^aoc] Kotlin project created by [otcathatsya][github] using the [Advent of Code Kotlin Template][template] delivered by JetBrains.
 
-In this repository, otcathatsya is about to provide solutions for the puzzles using [Kotlin][kotlin] language.
-
-If you're stuck with Kotlin-specific questions or anything related to this template, check out the following resources:
-
-- [Kotlin docs][docs]
-- [Kotlin Slack][slack]
-- Template [issue tracker][issues]
+In this repository, otcathatsya is about to provide solutions for the puzzles using [Kotlin][kotlin] language - but wait!
+It's not just Kotlin!! To spice it up, each day will be a different language. As decided by the gods:
+![img_1.png](lineup.png) (okay I did Kotlin and Scala before I decided to do this)
 
 
 [^aoc]:
