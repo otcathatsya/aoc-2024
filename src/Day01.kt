@@ -1,21 +1,20 @@
+import kotlin.math.abs
+
 fun main() {
-    fun part1(input: List<String>): Int {
-        return input.size
-    }
+    fun part1(listA: List<Int>, listB: List<Int>): Int =
+        listA.sorted().zip(listB.sorted()) { a, b -> abs(a - b) }.sum()
 
-    fun part2(input: List<String>): Int {
-        return input.size
-    }
+    // todo: you could lookup table the occurrences but whatever
+    fun part2(listA: List<Int>, listB: List<Int>): Int =
+        listA.sumOf { a -> a * listB.count { it == a } }
 
-    // Test if implementation meets criteria from the description, like:
-    check(part1(listOf("test_input")) == 1)
+    val (listA, listB) = readInput("Day01")
+        .map {
+            it.split("   ")
+                .map(String::toInt).let { (a, b) -> a to b }
+        }
+        .unzip()
 
-    // Or read a large test input from the `src/Day01_test.txt` file:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
-
-    // Read the input from the `src/Day01.txt` file.
-    val input = readInput("Day01")
-    part1(input).println()
-    part2(input).println()
+    println(part1(listA, listB))
+    println(part2(listA, listB))
 }
