@@ -11,7 +11,7 @@ from()why()?mul(603,692)({select()}] )]-(mul(387,685)who()mul(28,717)who()]where
 
 sum = 0
 skip = False
-for match in re.finditer(r"(?:mul\((\d+),(\d+)\)|do\(\)|don\'t\(\))", test):
+for match in re.finditer(r"mul\((\d+),(\d+)\)|do\(\)|don\'t\(\)", test):
     if match.group(0) == 'do()':
         skip = False
     elif match.group(0) == 'don\'t()':
