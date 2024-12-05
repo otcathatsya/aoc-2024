@@ -59,9 +59,8 @@ function part2() {
                 continue
 
             if (!inBounds(row + 1, col + 1) || !inBounds(row - 1, col - 1)
-                || !inBounds(row + 1, col - 1) || !inBounds(row - 1, col + 1)) {
+                || !inBounds(row + 1, col - 1) || !inBounds(row - 1, col + 1))
                 continue
-            }
 
             const diagA = grid[row + 1][col + 1];
             const diagB = grid[row - 1][col - 1];
