@@ -31,8 +31,7 @@ int part1(Grid &grid, Coordinate loc, int dirIndex, int steps) {
 
     if (!inBounds(grid, nextLoc)) return steps;  // Walked off-map
     if (at(grid, nextLoc) == '#') return part1(grid, loc, (dirIndex + 1) % 4, steps);  // Hit obstacle
-
-    if (at(grid, nextLoc) != 'X') steps++;  // Stepped forward
+    if (at(grid, nextLoc) != 'X') steps++;
     return part1(grid, nextLoc, dirIndex, steps);
 }
 
@@ -42,11 +41,12 @@ int checkLoop(Grid &grid, Coordinate loc, int dirIndex) {
 
     char &cell = at(grid, loc);
     if (at(grid, nextLoc) == '#') {
+        // we only need to check the infinite loop conditions when a corner is hit
         if (cell >= 1 && cell < 5) cell++;
         else if (cell == 5) return 1;
         else cell = 1;
 
-        return checkLoop(grid, loc, (dirIndex + 1) % 4);
+        return checkLoop(grid, loc, (dirIndex + 1) % 4); // Hit obstacle
     }
     return checkLoop(grid, nextLoc, dirIndex);
 }
@@ -61,7 +61,6 @@ int part2(Grid &grid, Coordinate loc, int dirIndex, int obstacles, bool firstSte
     if (!firstStep && at(grid, nextLoc) != 'X') {
         Grid gridCopy = grid;
         at(gridCopy, nextLoc) = '#';
-        at(gridCopy, loc) = 1;
         obstacles += checkLoop(gridCopy, loc, (dirIndex + 1) % 4);
     }
     return part2(grid, nextLoc, dirIndex, obstacles, false);
