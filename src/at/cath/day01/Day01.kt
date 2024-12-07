@@ -1,6 +1,6 @@
-package day01
+package at.cath.day01
 
-import readInput
+import at.cath.readInput
 import kotlin.math.abs
 
 fun main() {

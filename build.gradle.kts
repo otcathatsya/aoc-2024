@@ -5,6 +5,7 @@ plugins {
 sourceSets {
     main {
         kotlin.srcDir("src")
+        java.srcDir("src")
     }
 }
 

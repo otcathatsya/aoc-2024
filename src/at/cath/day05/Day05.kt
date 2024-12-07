@@ -1,6 +1,6 @@
-package day05
+package at.cath.day05
 
-import readInput
+import at.cath.readInput
 
 fun main() {
     fun sumMiddle(
